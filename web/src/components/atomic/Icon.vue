@@ -78,10 +78,16 @@
   <SvgIcon v-else-if="name === 'visibility-private'" :path="mdiLockOutline" size="1.3rem" />
   <SvgIcon v-else-if="name === 'visibility-internal'" :path="mdiLockOpenOutline" size="1.3rem" />
 
-  <SvgIcon v-else-if="name === 'forgejo'" :path="siForgejo.path" size="1.3rem" />
-  <SvgIcon v-else-if="name === 'gitea'" :path="siGitea.path" size="1.3rem" />
-  <SvgIcon v-else-if="name === 'gitlab'" :path="mdiGitlab" size="1.3rem" />
-  <SvgIcon v-else-if="name === 'bitbucket' || name === 'bitbucket-dc'" :path="mdiBitbucket" size="1.3rem" />
+  <SvgIcon v-else-if="name === 'forgejo'" :bg-circle="bgCircle" :path="siForgejo.path" size="1.3rem" />
+  <SvgIcon v-else-if="name === 'gitea'" :bg-circle="bgCircle" :path="siGitea.path" size="1.3rem" />
+  <SvgIcon v-else-if="name === 'gitee'" :bg-circle="bgCircle" :path="siGitee.path" size="1.3rem" />
+  <SvgIcon v-else-if="name === 'gitlab'" :bg-circle="bgCircle" :path="mdiGitlab" size="1.3rem" />
+  <SvgIcon
+    v-else-if="name === 'bitbucket' || name === 'bitbucket-dc'"
+    :bg-circle="bgCircle"
+    :path="mdiBitbucket"
+    size="1.3rem"
+  />
 
   <svg v-else-if="name === 'spinner'" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path
@@ -178,7 +184,7 @@ import {
   mdiUnfoldMoreHorizontal,
   mdiWrenchCogOutline,
 } from '@mdi/js';
-import { siForgejo, siGitea } from 'simple-icons';
+import { siForgejo, siGitea, siGitee } from 'simple-icons';
 
 import SvgIcon from './SvgIcon.vue';
 
@@ -216,6 +222,7 @@ export type IconNames =
   | 'bitbucket'
   | 'bitbucket-dc'
   | 'forgejo'
+  | 'gitee'
   | 'question'
   | 'list'
   | 'plus'

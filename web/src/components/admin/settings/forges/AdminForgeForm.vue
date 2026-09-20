@@ -169,6 +169,7 @@ const forgeTypeOptions = [
   { value: 'gitlab', text: t('gitlab') },
   { value: 'gitea', text: t('gitea') },
   { value: 'forgejo', text: t('forgejo') },
+  { value: 'gitee', text: t('gitee') },
   { value: 'bitbucket', text: t('bitbucket') },
   { value: 'bitbucket-dc', text: t('bitbucket_dc') },
   { value: 'addon', text: t('addon') },
@@ -291,6 +292,8 @@ const oauthAppForgeUrl = computed(() => {
     case 'gitea':
     case 'forgejo':
       return `${forgeUrl}/user/settings/applications`;
+    case 'gitee':
+      return `${forgeUrl}/oauth/applications`;
     case 'bitbucket':
     case 'bitbucket-dc':
       return `${forgeUrl}/account/settings/app-passwords`;
