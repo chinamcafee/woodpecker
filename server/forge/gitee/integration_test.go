@@ -192,10 +192,10 @@ func TestAcceptanceCase5Activate(t *testing.T) {
 	client := newJourneyClient(t, srv)
 
 	err := client.Activate(context.Background(), &model.User{}, &model.Repo{
-		Owner:    "kylin",
-		Name:     "woodpecker",
-		FullName: "kylin/woodpecker",
-		Hash:     "h",
+		Owner:         "kylin",
+		Name:          "woodpecker",
+		FullName:      "kylin/woodpecker",
+		WebhookSecret: "h",
 	}, "https://hook")
 	assert.NoError(t, err)
 }

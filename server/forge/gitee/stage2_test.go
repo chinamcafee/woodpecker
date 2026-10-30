@@ -124,15 +124,15 @@ func stage2Client(t *testing.T, srv *httptest.Server) *Gitee {
 
 func stage2Repo() *model.Repo {
 	return &model.Repo{
-		Owner:    "kylin",
-		Name:     "woodpecker",
-		FullName: "kylin/woodpecker",
-		Clone:    "https://gitee.com/kylin/woodpecker.git",
-		Hash:     "repo-hash",
+		Owner:         "kylin",
+		Name:          "woodpecker",
+		FullName:      "kylin/woodpecker",
+		Clone:         "https://gitee.com/kylin/woodpecker.git",
+		WebhookSecret: "repo-hash",
 	}
 }
 
-// T14: Activate registers a webhook carrying the repo hash as password.
+// T14: Activate registers a webhook carrying the repo webhook secret as password.
 func TestStage2Activate(t *testing.T) {
 	srv, cap := mockStage2(t)
 	client := stage2Client(t, srv)

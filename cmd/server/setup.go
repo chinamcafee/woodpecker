@@ -250,6 +250,7 @@ func setupEvilGlobals(ctx context.Context, c *cli.Command, s store.Store) (err e
 	} else {
 		server.Config.Server.WebhookHost = serverHost
 	}
+	server.Config.Server.WebhookDisabled = c.Bool("server-webhook-disable")
 	server.Config.Server.OAuthHost = serverHost
 	server.Config.Server.Port = c.String("server-addr")
 	server.Config.Server.PortTLS = c.String("server-addr-tls")
